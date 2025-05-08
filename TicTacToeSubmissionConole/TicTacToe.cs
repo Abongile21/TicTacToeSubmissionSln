@@ -18,15 +18,17 @@ namespace TicTacToeSubmissionConole
         }
 
 
-        void checkBoard(){
-            for(int row =0; row==3;row++){
-                for(int col =0; col==3; col++){
-                    
-
+        void CheckBoard(){
+            for(int row =0; row<3;row++){
+                for(int col =0; col<3; col++){
+                    board[row,col] = " ";
                 }
             }
         }
+        
+        void checkWin(){
 
+        }
 
         public void Run()
         {
@@ -48,7 +50,7 @@ namespace TicTacToeSubmissionConole
             Console.Write("Please Enter Column: ");
             var column = Console.ReadLine();
 
-
+            
             // THIS JUST DRAWS THE BOARD (NO TIC TAC TOE LOGIC)
             _boardRenderer.AddMove(int.Parse(row), int.Parse(column), PlayerEnum.X, true);            
 
