@@ -26,9 +26,12 @@ namespace TicTacToeSubmissionConole
             }
         }
         
-        bool checkWin(string player){
+        bool CheckWin(string player){
 
             if(board[0,0]==player&& board[0,1]==player && board[0,2]==player){
+                return true;
+            }
+            else if(board[1,0]==player&& board[1,1]==player && board[1,2]==player){
                 return true;
             }
             else
