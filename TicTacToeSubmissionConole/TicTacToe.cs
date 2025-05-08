@@ -48,6 +48,77 @@ namespace TicTacToeSubmissionConole
 
         public void Run()
         {
+            bool gameComplete =false;
+
+            while(!gameComplete){
+                Console.Clear();
+                _boardRenderer.Render();
+
+                Console.SetCursorPosition(2, 19);
+                Console.Write("Player X");
+
+                Console.SetCursorPosition(2, 20);
+                Console.Write("Please Enter Row: ");
+                int row = int.Parse(Console.ReadLine());
+
+                Console.SetCursorPosition(2, 22);
+                Console.Write("Please Enter Column: ");
+                int column = int.Parse(Console.ReadLine());
+
+                //
+                if (IsValidMove(row, column))
+                {
+                    board[row, column] = "X";
+                    _boardRenderer.AddMove(row, column, PlayerEnum.X, true);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move. Try again.");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                if (CheckWin("X"))
+                {
+                    Console.WriteLine("Player X wins!");
+                    gameComplete = true;
+                    break;
+                }
+
+                Console.Clear();
+                _boardRenderer.Render();
+
+                Console.SetCursorPosition(2, 19);
+                Console.Write("Player O");
+
+                Console.SetCursorPosition(2, 20);
+                Console.Write("Please Enter Row: ");
+                row = int.Parse(Console.ReadLine());
+
+                Console.SetCursorPosition(2, 22);
+                Console.Write("Please Enter Column: ");
+                column = int.Parse(Console.ReadLine());
+
+                if (IsValidMove(row, column))
+                {
+                    board[row, column] = "O";
+                    _boardRenderer.AddMove(row, column, PlayerEnum.O, true);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move. Try again.");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                if (CheckWin("O"))
+                {
+                    Console.WriteLine("Player O wins!");
+                    gameComplete = true;
+                }
+
+
+            }
 
             
         }
