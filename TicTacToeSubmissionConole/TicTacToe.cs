@@ -35,13 +35,22 @@ namespace TicTacToeSubmissionConole
         
         bool CheckWin(string player){
 
-            if(board[0,0]==player&& board[0,1]==player && board[0,2]==player){
-                return true;
-            }
-            else if(board[1,0]==player&& board[1,1]==player && board[1,2]==player){
-                return true;
+            for (int rowIndex = 0; rowIndex < 3; rowIndex++)
+            {
+                if (board[rowIndex, 0] == player && board[rowIndex, 1] == player && board[rowIndex, 2] == player)
+                {   
+                    return true;
+                }           
             }
 
+
+            for (int columnIndex = 0; columnIndex < 3; columnIndex++)
+            {
+                if (board[0, columnIndex] == player && board[1, columnIndex] == player && board[2, columnIndex] == player)
+                { 
+                     return true;
+                }
+            }
 
             if (board[0, 0] == player && board[1, 1] == player && board[2, 2] == player)
             {
