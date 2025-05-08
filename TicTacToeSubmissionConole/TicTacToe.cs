@@ -15,6 +15,7 @@ namespace TicTacToeSubmissionConole
         {
             _boardRenderer = new TicTacToeConsoleRenderer(10,6);
             _boardRenderer.Render();
+            InitializerBoard();
         }
 
 
