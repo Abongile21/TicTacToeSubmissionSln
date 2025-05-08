@@ -25,6 +25,13 @@ namespace TicTacToeSubmissionConole
                 }
             }
         }
+
+
+        private bool IsValidMove(int row, int column)
+        {
+            return board[row,column]==" ";
+        }
+        
         
         bool CheckWin(string player){
 
