@@ -9,11 +9,22 @@ namespace TicTacToeSubmissionConole
     public class TicTacToe
     {
         private TicTacToeConsoleRenderer _boardRenderer;
+        private string[,] board = new string[3,3];
 
         public TicTacToe()
         {
             _boardRenderer = new TicTacToeConsoleRenderer(10,6);
             _boardRenderer.Render();
+        }
+
+
+        void checkBoard(){
+            for(int row =0; row==3;row++){
+                for(int col =0; col==3; col++){
+                    
+
+                }
+            }
         }
 
 
