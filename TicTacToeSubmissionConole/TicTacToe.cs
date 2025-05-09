@@ -65,7 +65,7 @@ namespace TicTacToeSubmissionConole
                 Console.Clear();
                 _boardRenderer.Render();
 
-                // --- Player X Move ---
+                // --- Player X Moves ---
                 Console.SetCursorPosition(2, 19);
                 Console.Write("Player X");
 
@@ -108,7 +108,7 @@ namespace TicTacToeSubmissionConole
                     break;
                 }
 
-                // --- Player O Move ---
+                // --- Player O Moves ---
                 Console.Clear();
                 _boardRenderer.Render();
 
