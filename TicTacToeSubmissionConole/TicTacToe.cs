@@ -94,7 +94,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("Player X wins!");
+                    Console.WriteLine("\n\n\nPlayer X wins!");
                     gameComplete = true;
                     break;
                 }
@@ -103,7 +103,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("It's a draw!");
+                    Console.WriteLine("\n\n\nIt's a draw!");
                     gameComplete = true;
                     break;
                 }
@@ -131,7 +131,7 @@ namespace TicTacToeSubmissionConole
                 }
                 else
                 {
-                    Console.WriteLine("Invalid move. Try again.");
+                    Console.WriteLine("\n\n\nInvalid move. Try again.");
                     Console.ReadLine();
                     continue;
                 }
@@ -140,7 +140,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("Player O wins!");
+                    Console.WriteLine("\n\nPlayer O wins!");
                     gameComplete = true;
                     break;
                 }
@@ -149,13 +149,13 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("It's a draw!");
+                    Console.WriteLine("\n\n\nIt's a draw!");
                     gameComplete = true;
                     break;
                 }
             }
 
-            Console.WriteLine("Game Over. Press Enter to exit.");
+            Console.WriteLine("\nGame Over. Press Enter to exit.");
             Console.ReadLine();
         }
     }
