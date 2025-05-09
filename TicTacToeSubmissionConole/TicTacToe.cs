@@ -65,7 +65,7 @@ namespace TicTacToeSubmissionConole
                 Console.Clear();
                 _boardRenderer.Render();
 
-                // --- Player X Moves ---
+                // --- Player X Movesup ---
                 Console.SetCursorPosition(2, 19);
                 Console.Write("Player X");
 
