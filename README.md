@@ -1,3 +1,3 @@
 # Tic Tac Toe
 
-![Alt text](image_guide/tictactoe.png)
+![Alt text](TicTacToeSubmissionConole/image_guide/Tictactoe.png)
