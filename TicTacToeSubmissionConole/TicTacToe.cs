@@ -1,6 +1,7 @@
 ﻿using System;
 using TicTacToeRendererLib.Enums;
 using TicTacToeRendererLib.Renderer;
+using System.Threading;
 
 namespace TicTacToeSubmissionConole
 {
@@ -65,37 +66,43 @@ namespace TicTacToeSubmissionConole
                 Console.Clear();
                 _boardRenderer.Render();
 
-                // --- Player X Movesup ---
-                Console.SetCursorPosition(2, 19);
-                Console.Write("Player X");
-
-                Console.SetCursorPosition(2, 20);
-                Console.Write("Please Enter Row (0-2): ");
-                int row = int.Parse(Console.ReadLine());
-
-                Console.SetCursorPosition(2, 22);
-                Console.Write("Please Enter Column (0-2): ");
-                int column = int.Parse(Console.ReadLine());
-
-                if (IsValidMove(row, column))
+                // --- Player X Move ---
+                bool validMove = false;
+                while (!validMove)
                 {
-                    board[row, column] = "X";
-                    _boardRenderer.AddMove(row, column, PlayerEnum.X, true);
-                    moveCount++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid move. Try again.");
-                    Console.ReadLine();
-                    continue;
+                    Console.SetCursorPosition(2, 19);
+                    Console.Write("Player X");
+
+                    Console.SetCursorPosition(2, 20);
+                    Console.Write("Please Enter Row (0-2): ");
+                    int row = int.Parse(Console.ReadLine());
+
+                    Console.SetCursorPosition(2, 22);
+                    Console.Write("Please Enter Column (0-2): ");
+                    int column = int.Parse(Console.ReadLine());
+
+                    if (IsValidMove(row, column))
+                    {
+                        board[row, column] = "X";
+                        _boardRenderer.AddMove(row, column, PlayerEnum.X, true);
+                        moveCount++;
+                        validMove = true;
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(2, 24);
+                        Console.Write("Invalid move. Play again...");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        _boardRenderer.Render();
+                    }
                 }
 
                 if (CheckWin("X"))
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("\n\n\nPlayer X wins!");
-                    gameComplete = true;
+                    Console.WriteLine("Player X wins!");
                     break;
                 }
 
@@ -103,45 +110,50 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("\n\n\nIt's a draw!");
-                    gameComplete = true;
+                    Console.WriteLine("It's a draw!");
                     break;
                 }
 
-                // --- Player O Moves ---
                 Console.Clear();
                 _boardRenderer.Render();
 
-                Console.SetCursorPosition(2, 19);
-                Console.Write("Player O");
-
-                Console.SetCursorPosition(2, 20);
-                Console.Write("Please Enter Row (0-2): ");
-                row = int.Parse(Console.ReadLine());
-
-                Console.SetCursorPosition(2, 22);
-                Console.Write("Please Enter Column (0-2): ");
-                column = int.Parse(Console.ReadLine());
-
-                if (IsValidMove(row, column))
+                // --- Player O Move ---
+                validMove = false;
+                while (!validMove)
                 {
-                    board[row, column] = "O";
-                    _boardRenderer.AddMove(row, column, PlayerEnum.O, true);
-                    moveCount++;
-                }
-                else
-                {
-                    Console.WriteLine("\n\n\nInvalid move. Try again.");
-                    Console.ReadLine();
-                    continue;
+                    Console.SetCursorPosition(2, 19);
+                    Console.Write("Player O");
+
+                    Console.SetCursorPosition(2, 20);
+                    Console.Write("Please Enter Row (0-2): ");
+                    int row = int.Parse(Console.ReadLine());
+
+                    Console.SetCursorPosition(2, 22);
+                    Console.Write("Please Enter Column (0-2): ");
+                    int column = int.Parse(Console.ReadLine());
+
+                    if (IsValidMove(row, column))
+                    {
+                        board[row, column] = "O";
+                        _boardRenderer.AddMove(row, column, PlayerEnum.O, true);
+                        moveCount++;
+                        validMove = true;
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(2, 24);
+                        Console.Write("Invalid move. Play again...");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        _boardRenderer.Render();
+                    }
                 }
 
                 if (CheckWin("O"))
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("\n\nPlayer O wins!");
-                    gameComplete = true;
+                    Console.WriteLine("Player O wins!");
                     break;
                 }
 
@@ -149,14 +161,14 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("\n\n\nIt's a draw!");
-                    gameComplete = true;
+                    Console.WriteLine("It's a draw!");
                     break;
                 }
             }
 
-            Console.WriteLine("\nGame Over. Press Enter to exit.");
+            Console.WriteLine("Game Over. Press Enter to exit.");
             Console.ReadLine();
         }
+
     }
 }
