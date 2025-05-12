@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace TicTacToeSubmissionConole
 {
@@ -11,6 +12,7 @@ namespace TicTacToeSubmissionConole
             Console.SetCursorPosition(10,2);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Welcome to Tic Tac Toe");
+            Thread.Sleep(2000);
 
             var ticTacToe = new TicTacToe();
 
