@@ -102,7 +102,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("Player X wins!");
+                    Console.WriteLine("\n\n\nPlayer X wins!");
                     break;
                 }
 
@@ -110,7 +110,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("It's a draw!");
+                    Console.WriteLine("\n\n\nIt's a draw!");
                     break;
                 }
 
@@ -153,7 +153,7 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("Player O wins!");
+                    Console.WriteLine("\n\n\nPlayer O wins!");
                     break;
                 }
 
@@ -161,12 +161,12 @@ namespace TicTacToeSubmissionConole
                 {
                     Console.Clear();
                     _boardRenderer.Render();
-                    Console.WriteLine("It's a draw!");
+                    Console.WriteLine("\n\n\nIt's a draw!");
                     break;
                 }
             }
 
-            Console.WriteLine("Game Over. Press Enter to exit.");
+            Console.WriteLine("\n\n\nGame Over. Press Enter to exit.");
             Console.ReadLine();
         }
 
