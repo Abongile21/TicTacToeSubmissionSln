@@ -1,6 +1,6 @@
 # 🎮 Tic Tac Toe Console Game
 
-A simple two-player Tic Tac Toe game built in C# using a console renderer (`TicTacToeRendererLib`).he game.
+A simple two-player Tic Tac Toe game built in C# using a console renderer (`TicTacToeRendererLib`).
 
 ![Alt text](TicTacToeSubmissionConole/image_guide/Tictactoe.png)
 
